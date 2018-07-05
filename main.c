@@ -2,16 +2,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void writeStingOnBitmap(BMP *bitmapImage, UINT width, UINT height, const char *msgToWrite) {
+void writeSecretOnBitmap(BMP *bitmapImage, UINT width, UINT height, const char *secretText) {
 
     UCHAR r, g, b;
 
     for (UINT x = 0; x < width; ++x) {
         for (UINT y = 0; y < height; ++y) {
 
-            BMP_GetPixelRGB(bitmapImage, x, y, &r, &g, &b);
+            printf("X: %lu, Y: %lu \n", x, y);
 
-            printf("R: %d, G: %d, B: %d \n", r, g, b);
+            //BMP_GetPixelRGB(bitmapImage, x, y, &r, &g, &b);
+
+            //printf("R: %d, G: %d, B: %d \n", r, g, b);
 
             //BMP_SetPixelRGB(bitmapImage, x, y, 255 - r, 255 - g, 255 - b);
         }
@@ -34,7 +36,7 @@ int main() {
 
     printf("Image - Dimension : %lu * %lu", width, height);
 
-    //writeStingOnBitmap(bitmapImage, width, height, "");
+    writeSecretOnBitmap(bitmapImage, width, height, "");
 
 
     /*BMP_WriteFile(bitmapImage, bmpEditedImageFilePath);
