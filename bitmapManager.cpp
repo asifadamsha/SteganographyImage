@@ -114,12 +114,11 @@ int BitmapManager::encryptSecrets(char *bmpfile, char *txtfile, char *output) {
     fwrite(header, 54, 1, outfile);    //write BMP header
     bitmapFilesize = bitmapFilesize - 54;
 
-    // main hiding/encoding process
     while (!feof(tfile)) {
         txtbuffer = fgetc(tfile);
         for (i = 0; i < 8; i++) {
             bmpbuffer = fgetc(bfile);
-            bmpbuffer &= 0xFE;        //FE, to make sure LSB is always zero
+            bmpbuffer &= 0xFE;
             bmpbuffer |= (char) ((txtbuffer >> i) & 1);
             fputc(bmpbuffer, outfile);
 
@@ -128,7 +127,6 @@ int BitmapManager::encryptSecrets(char *bmpfile, char *txtfile, char *output) {
         }
     }
 
-    // stuffing txt terminator indicator.
     for (i = 0; i < 8; i++) {
         bmpbuffer = fgetc(bfile);
         bmpbuffer &= 0xFE;
@@ -138,7 +136,6 @@ int BitmapManager::encryptSecrets(char *bmpfile, char *txtfile, char *output) {
         bitmapFilesize--;
     }
 
-    // write remaing bmp bytes into the new bmp file.
     if (bitmapFilesize != 0) {
         while (!feof(bfile)) {
             fputc(fgetc(bfile), outfile);
@@ -167,7 +164,6 @@ int BitmapManager::decryptSecrets(char *bmpfile, char *txtfile) {
     ch = 0;
 
     while (!feof(bfile)) {
-        //read the last bit from BMP file
         ch = 0;
         for (i = 0; i <= 7; i++) {
             bmpBuffer[i] = fgetc(bfile);
