@@ -40,8 +40,6 @@ int BmpFile::readHeader(char *filename) {
             return -1;
         }
 
-        bmpIdentifier = m1 * 100 + m2;
-
         fread((long *) &bmpFilesize, 4, 1, bmpFilename);
 
         fread((unsigned short int *) &bmpres1, 2, 1, bmpFilename);
@@ -79,17 +77,6 @@ int BmpFile::readHeader(char *filename) {
         fileSize = width * height * 3;
         bmpTotalStuffablechar = (fileSize / 8) - 54;
 
-        return 0;
-    }
-    return -1;
-}
-
-//0 if ok , -1 on err
-int BmpFile::getDimension(char *filename, long *width, long *height) {
-    if (isFileExist(filename) == 0) {
-        readHeader(filename);
-        *width = bmpWidth;
-        *height = bmpHeight;
         return 0;
     }
     return -1;

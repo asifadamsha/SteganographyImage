@@ -1,9 +1,10 @@
-//class structure for bmpFile
+
+/**
+ * Source : https://github.com/amant/Steganography
+ */
 
 class BmpFile {
 public:
-    // properties...
-    int bmpIdentifier;                                                //BM identifier
     long bmpFilesize;                                                //File size
     unsigned short int bmpres1, bmpres2;
     long bmpPixoff;
@@ -24,10 +25,8 @@ public:
     BmpFile(char *filename);                                        //constructor #
     ~BmpFile();                                                    //destructor
     int isFileExist(char *filename);                                //checking file existence
-    int getDimension(char *filename, long *width, long *height);    //get height & width
     int readHeader(char *filename);                                    //get the header info #
     int hide(char *bmpfile, char *txtfile, char *output);            //hidding job *
     int unhide(char *bmpfile, char *txtfile);                        //unhidding job *
     int checkFilesForHiding(char *bmpfile, char *txtfile);            //gets file ready
-    int printFileInfo();
 };
