@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Asif/Desktop/Crypto/SteganographyImage/bmpFile.cpp
+C:/Users/Asif/Desktop/Crypto/SteganographyImage/bitmapManager.cpp
 cstdio
 -
-bmpFile.h
-C:/Users/Asif/Desktop/Crypto/SteganographyImage/bmpFile.h
+bitmapManager.h
+C:/Users/Asif/Desktop/Crypto/SteganographyImage/bitmapManager.h
 
-C:/Users/Asif/Desktop/Crypto/SteganographyImage/bmpFile.h
+C:/Users/Asif/Desktop/Crypto/SteganographyImage/bitmapManager.h
 
 C:/Users/Asif/Desktop/Crypto/SteganographyImage/main.cpp
 iostream
 -
 string.h
 -
-bmpFile.h
-C:/Users/Asif/Desktop/Crypto/SteganographyImage/bmpFile.h
+bitmapManager.h
+C:/Users/Asif/Desktop/Crypto/SteganographyImage/bitmapManager.h
 

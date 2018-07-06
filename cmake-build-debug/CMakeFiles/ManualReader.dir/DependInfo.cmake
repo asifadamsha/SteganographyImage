@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Asif/Desktop/Crypto/SteganographyImage/bmpFile.cpp" "C:/Users/Asif/Desktop/Crypto/SteganographyImage/cmake-build-debug/CMakeFiles/ManualReader.dir/bmpFile.cpp.obj"
+  "C:/Users/Asif/Desktop/Crypto/SteganographyImage/bitmapManager.cpp" "C:/Users/Asif/Desktop/Crypto/SteganographyImage/cmake-build-debug/CMakeFiles/ManualReader.dir/bitmapManager.cpp.obj"
   "C:/Users/Asif/Desktop/Crypto/SteganographyImage/main.cpp" "C:/Users/Asif/Desktop/Crypto/SteganographyImage/cmake-build-debug/CMakeFiles/ManualReader.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

@@ -122,32 +122,32 @@ ManualReader/fast:
 	$(MAKE) -f CMakeFiles\ManualReader.dir\build.make CMakeFiles/ManualReader.dir/build
 .PHONY : ManualReader/fast
 
-bmpFile.obj: bmpFile.cpp.obj
+bitmapManager.obj: bitmapManager.cpp.obj
 
-.PHONY : bmpFile.obj
+.PHONY : bitmapManager.obj
 
 # target to build an object file
-bmpFile.cpp.obj:
-	$(MAKE) -f CMakeFiles\ManualReader.dir\build.make CMakeFiles/ManualReader.dir/bmpFile.cpp.obj
-.PHONY : bmpFile.cpp.obj
+bitmapManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\ManualReader.dir\build.make CMakeFiles/ManualReader.dir/bitmapManager.cpp.obj
+.PHONY : bitmapManager.cpp.obj
 
-bmpFile.i: bmpFile.cpp.i
+bitmapManager.i: bitmapManager.cpp.i
 
-.PHONY : bmpFile.i
+.PHONY : bitmapManager.i
 
 # target to preprocess a source file
-bmpFile.cpp.i:
-	$(MAKE) -f CMakeFiles\ManualReader.dir\build.make CMakeFiles/ManualReader.dir/bmpFile.cpp.i
-.PHONY : bmpFile.cpp.i
+bitmapManager.cpp.i:
+	$(MAKE) -f CMakeFiles\ManualReader.dir\build.make CMakeFiles/ManualReader.dir/bitmapManager.cpp.i
+.PHONY : bitmapManager.cpp.i
 
-bmpFile.s: bmpFile.cpp.s
+bitmapManager.s: bitmapManager.cpp.s
 
-.PHONY : bmpFile.s
+.PHONY : bitmapManager.s
 
 # target to generate assembly for a file
-bmpFile.cpp.s:
-	$(MAKE) -f CMakeFiles\ManualReader.dir\build.make CMakeFiles/ManualReader.dir/bmpFile.cpp.s
-.PHONY : bmpFile.cpp.s
+bitmapManager.cpp.s:
+	$(MAKE) -f CMakeFiles\ManualReader.dir\build.make CMakeFiles/ManualReader.dir/bitmapManager.cpp.s
+.PHONY : bitmapManager.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -185,9 +185,9 @@ help:
 	@echo ... ManualReader
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... bmpFile.obj
-	@echo ... bmpFile.i
-	@echo ... bmpFile.s
+	@echo ... bitmapManager.obj
+	@echo ... bitmapManager.i
+	@echo ... bitmapManager.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

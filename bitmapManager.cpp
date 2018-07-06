@@ -1,14 +1,14 @@
 /* This is the bmpFile format reading class implementation. */
 
 #include <cstdio>
-#include "bmpFile.h"
+#include "bitmapManager.h"
 
 #ifndef __BmpFile
 #define __BmpFile
 #endif
 
 // checks for existence of file, returns 0 if ok, returns -1 on error
-int BmpFile::isFileExist(char *filename) {
+int BitmapManager::isFileExist(char *filename) {
     FILE *bmpFilename;
     bmpFilename = fopen(filename, "rb");
 
@@ -21,76 +21,42 @@ int BmpFile::isFileExist(char *filename) {
     return 0;
 }
 
-// read header of file and other stuff, important method.
-int BmpFile::readHeader(char *filename) {
+int BitmapManager::readHeader(char *filename) {
     char m1, m2;
     unsigned long width, height, fileSize;
 
     if (isFileExist(filename) == 0) {
         FILE *bmpFilename = fopen(filename, "rb");
 
-        // reading first two part of file.
-        fread((char *) &m1, 1, 1, bmpFilename);
-        fread((char *) &m2, 1, 1, bmpFilename);
+        fseek(bmpFilename, 0, 2);
 
-        if (m1 != 'B' || m2 != 'M')    //B 42 & M 4D
-        {
-            throw ("error: not a valid bitmap file");
-            fclose(bmpFilename);
-            return -1;
-        }
+        fread(&bitmapFilesize, 4, 1, bmpFilename);
 
-        fread((long *) &bmpFilesize, 4, 1, bmpFilename);
+        fseek(bmpFilename, SEEK_CUR, 12);
 
-        fread((unsigned short int *) &bmpres1, 2, 1, bmpFilename);
+        fread(&bitmapWidth, 4, 1, bmpFilename);
 
-        fread((unsigned short int *) &bmpres2, 2, 1, bmpFilename);
-
-        fread((long *) &bmpPixoff, 4, 1, bmpFilename);
-
-        fread((long *) &bmpiSize, 4, 1, bmpFilename);
-
-        fread((long *) &bmpWidth, 4, 1, bmpFilename);
-
-        fread((long *) &bmpHeight, 4, 1, bmpFilename);
-
-        fread((unsigned short int *) &bmpPlanes, 2, 1, bmpFilename);
-
-        fread((unsigned short int *) &(bmpBitsPixel), 2, 1, bmpFilename);
-
-        fread((long *) &bmpCompression, 4, 1, bmpFilename);
-
-        fread((long *) &bmpImageSize, 4, 1, bmpFilename);
-
-        fread((long *) &bmpXscale, 4, 1, bmpFilename);
-
-        fread((long *) &bmpYScale, 4, 1, bmpFilename);
-
-        fread((long *) &bmpColor, 4, 1, bmpFilename);
-
-        fread((long *) &bmpImpCol, 4, 1, bmpFilename);
+        fread(&bitmapHeight, 4, 1, bmpFilename);
 
         fclose(bmpFilename);
 
-        width = bmpWidth;
-        height = bmpHeight;
+        width = bitmapWidth;
+        height = bitmapHeight;
         fileSize = width * height * 3;
-        bmpTotalStuffablechar = (fileSize / 8) - 54;
+        bitmapMaxAvailableData = (fileSize / 8) - 54;
 
         return 0;
     }
     return -1;
 }
 
-// class contructor
-BmpFile::BmpFile(char *filename) {
+BitmapManager::BitmapManager(char *filename) {
     if (isFileExist(filename) == 0) {
         readHeader(filename);
     }
 }
 
-// checking for file existence and compability.
-int BmpFile::checkFilesForHiding(char *bmpfile, char *txtfile) {
+int BitmapManager::isHidable(char *bmpfile, char *txtfile) {
     FILE *bfile, *tfile;
     long l = 0;
 
@@ -116,7 +82,7 @@ int BmpFile::checkFilesForHiding(char *bmpfile, char *txtfile) {
 
     readHeader(bmpfile);
 
-    if (l >= bmpTotalStuffablechar) {
+    if (l >= bitmapMaxAvailableData) {
         throw "length of text file too big , select bigger bmp file";
         return -1;
     }
@@ -127,7 +93,7 @@ int BmpFile::checkFilesForHiding(char *bmpfile, char *txtfile) {
 }
 
 // encoding implementation...
-int BmpFile::hide(char *bmpfile, char *txtfile, char *output) {
+int BitmapManager::encryptSecrets(char *bmpfile, char *txtfile, char *output) {
 
     FILE *bfile, *tfile, *outfile;
     unsigned char header[54];
@@ -135,8 +101,7 @@ int BmpFile::hide(char *bmpfile, char *txtfile, char *output) {
     int i;
     char txtTerminatorIndicator = '*';
 
-    // check and Initialize bmp & txt files...
-    if (checkFilesForHiding(bmpfile, txtfile) == -1) {
+    if (isHidable(bmpfile, txtfile) == -1) {
         throw "error!, initialization failed...";
         return -1;
     }
@@ -147,7 +112,7 @@ int BmpFile::hide(char *bmpfile, char *txtfile, char *output) {
 
     fread(header, 54, 1, bfile);        //read BMP header
     fwrite(header, 54, 1, outfile);    //write BMP header
-    bmpFilesize = bmpFilesize - 54;
+    bitmapFilesize = bitmapFilesize - 54;
 
     // main hiding/encoding process
     while (!feof(tfile)) {
@@ -158,8 +123,8 @@ int BmpFile::hide(char *bmpfile, char *txtfile, char *output) {
             bmpbuffer |= (char) ((txtbuffer >> i) & 1);
             fputc(bmpbuffer, outfile);
 
-            bmpTotalStuffablechar--;
-            bmpFilesize--;
+            bitmapMaxAvailableData--;
+            bitmapFilesize--;
         }
     }
 
@@ -169,12 +134,12 @@ int BmpFile::hide(char *bmpfile, char *txtfile, char *output) {
         bmpbuffer &= 0xFE;
         bmpbuffer |= (char) ((txtTerminatorIndicator >> i) & 1);
         fputc(bmpbuffer, outfile);
-        bmpTotalStuffablechar--;
-        bmpFilesize--;
+        bitmapMaxAvailableData--;
+        bitmapFilesize--;
     }
 
     // write remaing bmp bytes into the new bmp file.
-    if (bmpFilesize != 0) {
+    if (bitmapFilesize != 0) {
         while (!feof(bfile)) {
             fputc(fgetc(bfile), outfile);
         }
@@ -188,8 +153,7 @@ int BmpFile::hide(char *bmpfile, char *txtfile, char *output) {
     return 0;
 }
 
-// encoding implementation...
-int BmpFile::unhide(char *bmpfile, char *txtfile) {
+int BitmapManager::decryptSecrets(char *bmpfile, char *txtfile) {
     if (readHeader(bmpfile) == -1)
         return -1;
 
@@ -199,7 +163,7 @@ int BmpFile::unhide(char *bmpfile, char *txtfile) {
     bfile = fopen(bmpfile, "rb");
     tfile = fopen(txtfile, "w+b");
 
-    fseek(bfile, 54, SEEK_SET);                //skip the BMP header part
+    fseek(bfile, 54, SEEK_SET);
     ch = 0;
 
     while (!feof(bfile)) {
@@ -227,6 +191,3 @@ int BmpFile::unhide(char *bmpfile, char *txtfile) {
 
     return 0;
 }
-
-// destructor implementation
-BmpFile::~BmpFile() {}

@@ -3,4 +3,4 @@ project(SteganographyImage)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(ManualReader main.cpp bmpFile.cpp bmpFile.h)
+add_executable(ManualReader main.cpp bitmapManager.cpp bitmapManager.h)

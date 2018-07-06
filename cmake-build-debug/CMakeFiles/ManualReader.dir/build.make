@@ -80,40 +80,40 @@ CMakeFiles/ManualReader.dir/main.cpp.obj.provides: CMakeFiles/ManualReader.dir/m
 CMakeFiles/ManualReader.dir/main.cpp.obj.provides.build: CMakeFiles/ManualReader.dir/main.cpp.obj
 
 
-CMakeFiles/ManualReader.dir/bmpFile.cpp.obj: CMakeFiles/ManualReader.dir/flags.make
-CMakeFiles/ManualReader.dir/bmpFile.cpp.obj: ../bmpFile.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Asif\Desktop\Crypto\SteganographyImage\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ManualReader.dir/bmpFile.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\ManualReader.dir\bmpFile.cpp.obj -c C:\Users\Asif\Desktop\Crypto\SteganographyImage\bmpFile.cpp
+CMakeFiles/ManualReader.dir/bitmapManager.cpp.obj: CMakeFiles/ManualReader.dir/flags.make
+CMakeFiles/ManualReader.dir/bitmapManager.cpp.obj: ../bitmapManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Asif\Desktop\Crypto\SteganographyImage\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ManualReader.dir/bitmapManager.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\ManualReader.dir\bitmapManager.cpp.obj -c C:\Users\Asif\Desktop\Crypto\SteganographyImage\bitmapManager.cpp
 
-CMakeFiles/ManualReader.dir/bmpFile.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ManualReader.dir/bmpFile.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Asif\Desktop\Crypto\SteganographyImage\bmpFile.cpp > CMakeFiles\ManualReader.dir\bmpFile.cpp.i
+CMakeFiles/ManualReader.dir/bitmapManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ManualReader.dir/bitmapManager.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Asif\Desktop\Crypto\SteganographyImage\bitmapManager.cpp > CMakeFiles\ManualReader.dir\bitmapManager.cpp.i
 
-CMakeFiles/ManualReader.dir/bmpFile.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ManualReader.dir/bmpFile.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Asif\Desktop\Crypto\SteganographyImage\bmpFile.cpp -o CMakeFiles\ManualReader.dir\bmpFile.cpp.s
+CMakeFiles/ManualReader.dir/bitmapManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ManualReader.dir/bitmapManager.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Asif\Desktop\Crypto\SteganographyImage\bitmapManager.cpp -o CMakeFiles\ManualReader.dir\bitmapManager.cpp.s
 
-CMakeFiles/ManualReader.dir/bmpFile.cpp.obj.requires:
+CMakeFiles/ManualReader.dir/bitmapManager.cpp.obj.requires:
 
-.PHONY : CMakeFiles/ManualReader.dir/bmpFile.cpp.obj.requires
+.PHONY : CMakeFiles/ManualReader.dir/bitmapManager.cpp.obj.requires
 
-CMakeFiles/ManualReader.dir/bmpFile.cpp.obj.provides: CMakeFiles/ManualReader.dir/bmpFile.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\ManualReader.dir\build.make CMakeFiles/ManualReader.dir/bmpFile.cpp.obj.provides.build
-.PHONY : CMakeFiles/ManualReader.dir/bmpFile.cpp.obj.provides
+CMakeFiles/ManualReader.dir/bitmapManager.cpp.obj.provides: CMakeFiles/ManualReader.dir/bitmapManager.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\ManualReader.dir\build.make CMakeFiles/ManualReader.dir/bitmapManager.cpp.obj.provides.build
+.PHONY : CMakeFiles/ManualReader.dir/bitmapManager.cpp.obj.provides
 
-CMakeFiles/ManualReader.dir/bmpFile.cpp.obj.provides.build: CMakeFiles/ManualReader.dir/bmpFile.cpp.obj
+CMakeFiles/ManualReader.dir/bitmapManager.cpp.obj.provides.build: CMakeFiles/ManualReader.dir/bitmapManager.cpp.obj
 
 
 # Object files for target ManualReader
 ManualReader_OBJECTS = \
 "CMakeFiles/ManualReader.dir/main.cpp.obj" \
-"CMakeFiles/ManualReader.dir/bmpFile.cpp.obj"
+"CMakeFiles/ManualReader.dir/bitmapManager.cpp.obj"
 
 # External object files for target ManualReader
 ManualReader_EXTERNAL_OBJECTS =
 
 ManualReader.exe: CMakeFiles/ManualReader.dir/main.cpp.obj
-ManualReader.exe: CMakeFiles/ManualReader.dir/bmpFile.cpp.obj
+ManualReader.exe: CMakeFiles/ManualReader.dir/bitmapManager.cpp.obj
 ManualReader.exe: CMakeFiles/ManualReader.dir/build.make
 ManualReader.exe: CMakeFiles/ManualReader.dir/linklibs.rsp
 ManualReader.exe: CMakeFiles/ManualReader.dir/objects1.rsp
@@ -127,7 +127,7 @@ CMakeFiles/ManualReader.dir/build: ManualReader.exe
 .PHONY : CMakeFiles/ManualReader.dir/build
 
 CMakeFiles/ManualReader.dir/requires: CMakeFiles/ManualReader.dir/main.cpp.obj.requires
-CMakeFiles/ManualReader.dir/requires: CMakeFiles/ManualReader.dir/bmpFile.cpp.obj.requires
+CMakeFiles/ManualReader.dir/requires: CMakeFiles/ManualReader.dir/bitmapManager.cpp.obj.requires
 
 .PHONY : CMakeFiles/ManualReader.dir/requires
 

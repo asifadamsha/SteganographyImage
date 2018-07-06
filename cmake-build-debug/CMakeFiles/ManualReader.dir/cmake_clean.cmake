@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ManualReader.dir/main.cpp.obj"
-  "CMakeFiles/ManualReader.dir/bmpFile.cpp.obj"
+  "CMakeFiles/ManualReader.dir/bitmapManager.cpp.obj"
   "ManualReader.pdb"
   "ManualReader.exe"
   "ManualReader.exe.manifest"

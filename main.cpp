@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string.h>
-#include "bmpFile.h"
+#include "bitmapManager.h"
 
 unsigned char permutationTable[256];
 unsigned char cle[] = "Bonjour le monde, voici ma superbe clé";
@@ -172,8 +172,8 @@ int main() {
     char bitmapPath[] = "..\\data\\tiger.bmp";
     char outputBitmapPath[] = "..\\data\\tiger_edited.bmp";
 
-    BmpFile bmpFileEncrypt(bitmapPath);
-    bmpFileEncrypt.hide(bitmapPath, secretOutputPath, outputBitmapPath);
+    BitmapManager bmpFileEncrypt(bitmapPath);
+    bmpFileEncrypt.encryptSecrets(bitmapPath, secretOutputPath, outputBitmapPath);
 
 
     /**
@@ -186,8 +186,8 @@ int main() {
 
     char decryptBitmapPath[] = "..\\data\\secret_decrypt.txt";
 
-    BmpFile bmpFileDecrypt(outputBitmapPath);
-    bmpFileDecrypt.unhide(outputBitmapPath, decryptBitmapPath);
+    BitmapManager bmpFileDecrypt(outputBitmapPath);
+    bmpFileDecrypt.decryptSecrets(outputBitmapPath, decryptBitmapPath);
 
     //OPTIONNEL : On écrira également le contenu DECHIFFRE  dans "lorem_ipsum_dechiffre.txt"
     secretOutputFile = fopen(decryptBitmapPath, "w+");
