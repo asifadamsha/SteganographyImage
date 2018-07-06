@@ -110,71 +110,71 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named qdbmpBitmap
+# Target rules for targets named ManualReader
 
 # Build rule for target.
-qdbmpBitmap: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 qdbmpBitmap
-.PHONY : qdbmpBitmap
+ManualReader: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 ManualReader
+.PHONY : ManualReader
 
 # fast build rule for target.
-qdbmpBitmap/fast:
-	$(MAKE) -f CMakeFiles\qdbmpBitmap.dir\build.make CMakeFiles/qdbmpBitmap.dir/build
-.PHONY : qdbmpBitmap/fast
+ManualReader/fast:
+	$(MAKE) -f CMakeFiles\ManualReader.dir\build.make CMakeFiles/ManualReader.dir/build
+.PHONY : ManualReader/fast
 
-main.obj: main.c.obj
+bmpFile.obj: bmpFile.cpp.obj
+
+.PHONY : bmpFile.obj
+
+# target to build an object file
+bmpFile.cpp.obj:
+	$(MAKE) -f CMakeFiles\ManualReader.dir\build.make CMakeFiles/ManualReader.dir/bmpFile.cpp.obj
+.PHONY : bmpFile.cpp.obj
+
+bmpFile.i: bmpFile.cpp.i
+
+.PHONY : bmpFile.i
+
+# target to preprocess a source file
+bmpFile.cpp.i:
+	$(MAKE) -f CMakeFiles\ManualReader.dir\build.make CMakeFiles/ManualReader.dir/bmpFile.cpp.i
+.PHONY : bmpFile.cpp.i
+
+bmpFile.s: bmpFile.cpp.s
+
+.PHONY : bmpFile.s
+
+# target to generate assembly for a file
+bmpFile.cpp.s:
+	$(MAKE) -f CMakeFiles\ManualReader.dir\build.make CMakeFiles/ManualReader.dir/bmpFile.cpp.s
+.PHONY : bmpFile.cpp.s
+
+main.obj: main.cpp.obj
 
 .PHONY : main.obj
 
 # target to build an object file
-main.c.obj:
-	$(MAKE) -f CMakeFiles\qdbmpBitmap.dir\build.make CMakeFiles/qdbmpBitmap.dir/main.c.obj
-.PHONY : main.c.obj
+main.cpp.obj:
+	$(MAKE) -f CMakeFiles\ManualReader.dir\build.make CMakeFiles/ManualReader.dir/main.cpp.obj
+.PHONY : main.cpp.obj
 
-main.i: main.c.i
+main.i: main.cpp.i
 
 .PHONY : main.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles\qdbmpBitmap.dir\build.make CMakeFiles/qdbmpBitmap.dir/main.c.i
-.PHONY : main.c.i
+main.cpp.i:
+	$(MAKE) -f CMakeFiles\ManualReader.dir\build.make CMakeFiles/ManualReader.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-main.s: main.c.s
+main.s: main.cpp.s
 
 .PHONY : main.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles\qdbmpBitmap.dir\build.make CMakeFiles/qdbmpBitmap.dir/main.c.s
-.PHONY : main.c.s
-
-qdbmp.obj: qdbmp.c.obj
-
-.PHONY : qdbmp.obj
-
-# target to build an object file
-qdbmp.c.obj:
-	$(MAKE) -f CMakeFiles\qdbmpBitmap.dir\build.make CMakeFiles/qdbmpBitmap.dir/qdbmp.c.obj
-.PHONY : qdbmp.c.obj
-
-qdbmp.i: qdbmp.c.i
-
-.PHONY : qdbmp.i
-
-# target to preprocess a source file
-qdbmp.c.i:
-	$(MAKE) -f CMakeFiles\qdbmpBitmap.dir\build.make CMakeFiles/qdbmpBitmap.dir/qdbmp.c.i
-.PHONY : qdbmp.c.i
-
-qdbmp.s: qdbmp.c.s
-
-.PHONY : qdbmp.s
-
-# target to generate assembly for a file
-qdbmp.c.s:
-	$(MAKE) -f CMakeFiles\qdbmpBitmap.dir\build.make CMakeFiles/qdbmpBitmap.dir/qdbmp.c.s
-.PHONY : qdbmp.c.s
+main.cpp.s:
+	$(MAKE) -f CMakeFiles\ManualReader.dir\build.make CMakeFiles/ManualReader.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -182,15 +182,15 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
+	@echo ... ManualReader
 	@echo ... edit_cache
-	@echo ... qdbmpBitmap
 	@echo ... rebuild_cache
+	@echo ... bmpFile.obj
+	@echo ... bmpFile.i
+	@echo ... bmpFile.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... qdbmp.obj
-	@echo ... qdbmp.i
-	@echo ... qdbmp.s
 .PHONY : help
 
 

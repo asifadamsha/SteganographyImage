@@ -59,39 +59,39 @@ CMAKE_SOURCE_DIR = C:\Users\Asif\Desktop\Crypto\SteganographyImage
 CMAKE_BINARY_DIR = C:\Users\Asif\Desktop\Crypto\SteganographyImage\cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/qdbmpBitmap.dir
+# Target rules for target CMakeFiles/ManualReader.dir
 
 # All Build rule for target.
-CMakeFiles/qdbmpBitmap.dir/all:
-	$(MAKE) -f CMakeFiles\qdbmpBitmap.dir\build.make CMakeFiles/qdbmpBitmap.dir/depend
-	$(MAKE) -f CMakeFiles\qdbmpBitmap.dir\build.make CMakeFiles/qdbmpBitmap.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Asif\Desktop\Crypto\SteganographyImage\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target qdbmpBitmap"
-.PHONY : CMakeFiles/qdbmpBitmap.dir/all
+CMakeFiles/ManualReader.dir/all:
+	$(MAKE) -f CMakeFiles\ManualReader.dir\build.make CMakeFiles/ManualReader.dir/depend
+	$(MAKE) -f CMakeFiles\ManualReader.dir\build.make CMakeFiles/ManualReader.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Asif\Desktop\Crypto\SteganographyImage\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target ManualReader"
+.PHONY : CMakeFiles/ManualReader.dir/all
 
 # Include target in all.
-all: CMakeFiles/qdbmpBitmap.dir/all
+all: CMakeFiles/ManualReader.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/qdbmpBitmap.dir/rule: cmake_check_build_system
+CMakeFiles/ManualReader.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Asif\Desktop\Crypto\SteganographyImage\cmake-build-debug\CMakeFiles 3
-	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/qdbmpBitmap.dir/all
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/ManualReader.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Asif\Desktop\Crypto\SteganographyImage\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/qdbmpBitmap.dir/rule
+.PHONY : CMakeFiles/ManualReader.dir/rule
 
 # Convenience name for target.
-qdbmpBitmap: CMakeFiles/qdbmpBitmap.dir/rule
+ManualReader: CMakeFiles/ManualReader.dir/rule
 
-.PHONY : qdbmpBitmap
-
-# clean rule for target.
-CMakeFiles/qdbmpBitmap.dir/clean:
-	$(MAKE) -f CMakeFiles\qdbmpBitmap.dir\build.make CMakeFiles/qdbmpBitmap.dir/clean
-.PHONY : CMakeFiles/qdbmpBitmap.dir/clean
+.PHONY : ManualReader
 
 # clean rule for target.
-clean: CMakeFiles/qdbmpBitmap.dir/clean
+CMakeFiles/ManualReader.dir/clean:
+	$(MAKE) -f CMakeFiles\ManualReader.dir\build.make CMakeFiles/ManualReader.dir/clean
+.PHONY : CMakeFiles/ManualReader.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ManualReader.dir/clean
 
 .PHONY : clean
 

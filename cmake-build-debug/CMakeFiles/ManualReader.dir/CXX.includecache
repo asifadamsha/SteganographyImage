@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Asif/Desktop/Crypto/SteganographyImage/bmpFile.cpp
+cstdio
+-
+bmpFile.h
+C:/Users/Asif/Desktop/Crypto/SteganographyImage/bmpFile.h
+
+C:/Users/Asif/Desktop/Crypto/SteganographyImage/bmpFile.h
+
+C:/Users/Asif/Desktop/Crypto/SteganographyImage/main.cpp
+iostream
+-
+string.h
+-
+bmpFile.h
+C:/Users/Asif/Desktop/Crypto/SteganographyImage/bmpFile.h
+

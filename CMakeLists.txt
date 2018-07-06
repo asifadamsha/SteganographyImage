@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
-project(qdbmpBitmap C)
+project(SteganographyImage)
 
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_CXX_STANDARD 11)
 
-add_executable(qdbmpBitmap main.c qdbmp.c qdbmp.h)
+add_executable(ManualReader main.cpp bmpFile.cpp bmpFile.h)
