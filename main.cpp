@@ -181,7 +181,7 @@ int main() {
      */
 
     /**
-     * Read secret from bitmap
+     * Read secrets from bitmap image
     */
 
     char decryptBitmapPath[] = "..\\data\\secret_decrypt.txt";
@@ -221,19 +221,3 @@ int main() {
 
     return (0);
 }
-
-/*int main() {
-
-    char bitmapPath[] = "..\\data\\tiger.bmp";
-    char outputBitmapPath[] = "..\\data\\tiger_edited.bmp";
-    char secretPath[] = "c";
-    char outputSecretPath[] = "..\\data\\secret_output.txt";
-
-    BmpFile bmpFile(bitmapPath);
-    bmpFile.unhide(outputBitmapPath, outputSecretPath);
-    //bmpFile.hide(bitmapPath, secretPath, outputBitmapPath);
-
-    //hideBitmapText(bitmapPath,outputBitmapPath,secret);
-
-    return 0;
-}*/
